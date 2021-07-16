@@ -14,6 +14,7 @@ resource "aws_s3_bucket_object" "upload_json_config" {
   content                = local.json_config
   content_type           = "application/json"
   server_side_encryption = "AES256"
+  tags={}
 }
 
 # Script for uploading HBase/Hadoop configuration to S3
@@ -30,4 +31,5 @@ resource "aws_s3_bucket_object" "upload_hbase_config_script" {
     }
   )
   server_side_encryption = "AES256"
+  tags={}
 }
